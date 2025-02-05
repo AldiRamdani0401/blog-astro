@@ -1,13 +1,17 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.2.5"><title>MyBlog | Articles</title><!-- Font Inter --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><!-- Icon --><script src="https://kit.fontawesome.com/3e5321d52d.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/_astro/index.BoJA9nCu.css"></head> <body data-astro-cid-37fxchfa>  <div class="relative flex flex-col h-screen w-screen"> <!-- Header --> <script>
+<!DOCTYPE html><html lang="en" data-theme="light"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.2.5"><title>MyBlog | Articles</title><!-- Font Inter --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"><!-- Icon --><script src="https://kit.fontawesome.com/3e5321d52d.js" crossorigin="anonymous"></script><!-- Script untuk Dark Mode --><script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      // document.documentElement.classList.toggle(
+      //   "dark",
+      //   localStorage.currentTheme === "dark" ||
+      //     (!("theme" in localStorage) &&
+      //       window.matchMedia("(prefers-color-scheme: dark)").matches)
+      // );
+      const theme = localStorage.getItem("theme");
+      document.documentElement.setAttribute('data-theme', theme);
+    </script><link rel="stylesheet" href="/_astro/index.pFglMWJi.css"></head> <body>  <div class="relative flex flex-col h-screen w-screen bg-[#f9f9f9] dark:bg-slate-800"> <!-- Header --> <script>
   // HANDLERS //
-  // ** caution ** //
-  function closeCaution() {
-    const element = document.getElementById("caution");
-    element.remove();
-  }
-  // ** end of caution ** //
 
-  // === MOBILE === //
+  // --- MOBILE --- //
   // ** NAV ** //
   function openMenu() {
     const element = document.getElementById("mobile-menu");
@@ -20,6 +24,69 @@
     element.classList.add("hidden");
   }
   // ** end of NAV ** //
-</script> <!-- HEADER --><header class="flex flex-row justify-between items-center h-fit px-2 lg:px-10 bg-gray-950"> <a href="/" class="text-2xl font-medium text-white py-2">MyBlog 🚀</a> <!-- === DESKTOP === --> <nav class="hidden lg:flex flex-row h-full text-lg justify-around w-1/2 text-slate-200 border"> <a href="/" class="flex items-center justify-center w-full h-full hover:font-bold hover:bg-blue-900">Home</a> <a href="/about" class="flex items-center justify-center w-full h-full hover:font-bold hover:bg-blue-900">About</a> <a href="/articles" class="flex items-center justify-center w-full h-full hover:font-bold hover:bg-blue-900">Articles</a> <a href="/categories" class="flex items-center justify-center w-full h-full hover:font-bold hover:bg-blue-900">Categories</a> </nav> <a href="/auth/login" class="hidden lg:flex items-center justify-center h-full w-[10%] text-slate-200 hover:font-bold hover:bg-indigo-800">Sign In</a> <!-- === end of DESKTOP === --> <!-- === MOBILE === --> <button type="button" class="block lg:hidden text-white text-2xl" onclick="openMenu()"> <svg fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="1em" width="1em" style="overflow: visible; color: currentcolor;"><path d="M3 12 21 12"></path><path d="M3 6 21 6"></path><path d="M3 18 21 18"></path></svg> </button> <!-- === NAVIGATION === --> <div id="mobile-menu" class="hidden h-full w-full top-0 left-0"> <!-- Masking --> <div class="w-full h-full bg-black opacity-30"></div> <!-- Menu --> <div class="absolute lg:hidden flex flex-col justify-between pt-5 pb-10 top-0 bg-gray-800 right-0 h-full w-[70%]"> <div class="flex flex-col gap-2"> <button type="button" class="px-2 w-fit text-3xl text-red-700 border" onclick="closeMenu()"><svg fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="1em" width="1em" style="overflow: visible; color: currentcolor;"><path d="m563.8 512 262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path></svg></button> <nav class="flex flex-col h-fit text-lg justify-around w-full text-slate-200 border"> <a href="/" class="flex items-center justify-center w-full h-full hover:font-bold hover:bg-blue-900">Home</a> <a href="/about" class="flex items-center justify-center w-full h-full hover:font-bold hover:bg-blue-900">About</a> <a href="/articles" class="flex items-center justify-center w-full h-full hover:font-bold hover:bg-blue-900">Articles</a> <a href="/categories" class="flex items-center justify-center w-full h-full hover:font-bold hover:bg-blue-900">Categories</a> <a href="/auth/login" class="h-full w-full flex items-center text-slate-200 justify-center hover:font-bold hover:bg-indigo-800">Sign In</a> </nav> </div> <div class="align-baseline border">copyright</div> </div> </div> <!-- === end of MOBILE === --> </header> <!-- === CAUTION === --> <div id="caution" class="flex flex-row justify-center items-center gap-5 text-xl text-center py-2 px-2 bg-yellow-400 select-none"> <img src="/_astro/development.GXW84Dpu_Z7j0BT.webp" alt="Development" width="640" height="640" loading="lazy" decoding="async" class="h-10 w-10 rounded-full"> <h1 class="font-bold text-sm">This website is still under development</h1> <button class="text-red-500 font-bold text-3xl cursor-pointer" onclick="closeCaution()">
-✖
-</button> </div> <!-- CAUTION --> <!-- <Caution client:only /> --> <!-- Content --> <main class="flex-1 px-10">  <h1>Articles</h1>  </main> <!-- Footer --> <footer> <h1>Footer</h1> </footer> </div>  </body></html>
+</script> <!-- CAUTION --><script>
+  // ** caution ** //
+  function closeCaution() {
+    const element = document.getElementById("caution");
+    element.remove();
+  }
+  // ** end of caution ** //
+</script> <!-- === CAUTION === --><div id="caution" class="flex flex-row justify-center items-center gap-5 text-xl text-center py-2 px-2 bg-yellow-400 select-none"> <img src="/_astro/development.GXW84Dpu_Z7j0BT.webp" alt="Development" width="640" height="640" loading="lazy" decoding="async" class="h-8 w-8 rounded-full"> <h1 class="font-bold text-sm">This website is still under development</h1> <button class="text-red-500 font-extrabold text-xl border-2 bg-red-200 hover:text-red-200 hover:bg-red-500 hover:border-red-500 rounded-full cursor-pointer" title="close notification" onclick="closeCaution()"> <svg fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="1em" width="1em" style="overflow: visible; color: currentcolor;"><path d="m563.8 512 262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path></svg> </button> </div> <!-- === end of CAUTION === --> <!-- end of CAUTION --> <!-- HEADER --> <header class="flex flex-col justify-between items-center h-fit"> <!-- === NAVBAR ===  --> <div class="flex flex-row justify-between w-full items-center h-fit px-2 lg:px-10 bg-gray-800 dark:bg-slate-900"> <a href="/" class="text-2xl font-medium text-white py-2">MyBlog 🚀</a> <!-- === DESKTOP === --> <!-- Container 1 : List Menu --> <nav class="hidden lg:flex flex-row h-full text-lg justify-around w-1/4 text-slate-200"> <a href="/" class="flex items-center justify-center text-left w-full h-full hover:font-bold hover:bg-blue-900">Home</a> <a href="/about" class="flex items-center justify-center w-full h-full hover:font-bold hover:bg-blue-900">About</a> <a href="/articles" class="flex items-center justify-center w-full h-full hover:font-bold hover:bg-blue-900">Articles</a> <a href="/categories" class="flex items-center justify-center w-full h-full px-2 hover:font-bold hover:bg-blue-900">Categories</a> </nav> <!-- end of List Menu --> <!-- Container 2 : Theme Toogle & Sign In --> <div class="flex flex-row items-center gap-2 h-full w-1/10"> <div class="flex items-center h-full px-2 bg-gray-700"> <button id="theme-toggle" class="self-center h-fit w-fit text-slate-100 p-1 rounded-full hover:bg-gray-600 cursor-pointer"> <!-- Icon --> <div id="icon-theme" class="p-1 hover:bg-gray-500 rounded-full"></div> </button> </div> <script>
+
+  // === EVENTS === //
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", function () {
+      // Set Theme
+      document.documentElement.classList.toggle("dark");
+      localStorage.setItem(
+        "theme",
+        document.documentElement.classList.contains("dark") ? "dark" : "light"
+      );
+
+      // Apply Theme
+      const theme = localStorage.getItem("theme");
+      document.documentElement.setAttribute("data-theme", theme);
+
+      // icon
+      let icon = "";
+      if (theme === "dark") {
+        icon = `
+          <svg fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="1.5em" width="1.5em" style="overflow: visible; color: currentcolor;"><path d="M144.7 98.7c-21 34.1-33.1 74.3-33.1 117.3 0 98 62.8 181.4 150.4 211.7-12.4 2.8-25.3 4.3-38.6 4.3C126.6 432 48 353.3 48 256c0-68.9 39.4-128.4 96.8-157.3zm62.1-66C91.1 41.2 0 137.9 0 256c0 123.7 100 224 223.5 224 47.8 0 92-15 128.4-40.6 1.9-1.3 3.7-2.7 5.5-4 4.8-3.6 9.4-7.4 13.9-11.4 2.7-2.4 5.3-4.8 7.9-7.3 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-3.7.6-7.4 1.2-11.1 1.6-5 .5-10.1.9-15.3 1h-4c-96.8-.2-175.2-78.9-175.2-176 0-54.8 24.9-103.7 64.1-136 1-.9 2.1-1.7 3.2-2.6 4-3.2 8.2-6.2 12.5-9 3.1-2 6.3-4 9.6-5.8 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-3.6-.3-7.1-.5-10.7-.6-2.7-.1-5.5-.1-8.2-.1-3.3 0-6.5.1-9.8.2-2.3.1-4.6.2-6.9.4z"></path></svg>
+        `;
+      } else {
+        icon = `
+          <svg fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="1.5em" width="1.5em" style="overflow: visible; color: currentcolor;"><path d="M12 7A5 5 0 1 0 12 17 5 5 0 1 0 12 7z"></path><path d="M12 1 12 3"></path><path d="M12 21 12 23"></path><path d="M4.22 4.22 5.64 5.64"></path><path d="M18.36 18.36 19.78 19.78"></path><path d="M1 12 3 12"></path><path d="M21 12 23 12"></path><path d="M4.22 19.78 5.64 18.36"></path><path d="M18.36 5.64 19.78 4.22"></path></svg>
+        `;
+      }
+      document.getElementById("icon-theme").innerHTML = icon;
+    });
+  // === end of EVENTS === //
+
+  // === EVENT LOAD === //
+  window.document.addEventListener("DOMContentLoaded", () => {
+    const element = document.getElementById("icon-theme");
+    let icon = "";
+    if (localStorage.getItem("theme") === "dark") {
+      icon = `
+            <svg fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="1.5em" width="1.5em" style="overflow: visible; color: currentcolor;"><path d="M144.7 98.7c-21 34.1-33.1 74.3-33.1 117.3 0 98 62.8 181.4 150.4 211.7-12.4 2.8-25.3 4.3-38.6 4.3C126.6 432 48 353.3 48 256c0-68.9 39.4-128.4 96.8-157.3zm62.1-66C91.1 41.2 0 137.9 0 256c0 123.7 100 224 223.5 224 47.8 0 92-15 128.4-40.6 1.9-1.3 3.7-2.7 5.5-4 4.8-3.6 9.4-7.4 13.9-11.4 2.7-2.4 5.3-4.8 7.9-7.3 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-3.7.6-7.4 1.2-11.1 1.6-5 .5-10.1.9-15.3 1h-4c-96.8-.2-175.2-78.9-175.2-176 0-54.8 24.9-103.7 64.1-136 1-.9 2.1-1.7 3.2-2.6 4-3.2 8.2-6.2 12.5-9 3.1-2 6.3-4 9.6-5.8 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-3.6-.3-7.1-.5-10.7-.6-2.7-.1-5.5-.1-8.2-.1-3.3 0-6.5.1-9.8.2-2.3.1-4.6.2-6.9.4z"></path></svg>
+          `;
+    } else {
+      icon = `
+            <svg fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="1.5em" width="1.5em" style="overflow: visible; color: currentcolor;"><path d="M12 7A5 5 0 1 0 12 17 5 5 0 1 0 12 7z"></path><path d="M12 1 12 3"></path><path d="M12 21 12 23"></path><path d="M4.22 4.22 5.64 5.64"></path><path d="M18.36 18.36 19.78 19.78"></path><path d="M1 12 3 12"></path><path d="M21 12 23 12"></path><path d="M4.22 19.78 5.64 18.36"></path><path d="M18.36 5.64 19.78 4.22"></path></svg>
+          `;
+    }
+    element.innerHTML = icon;
+  });
+</script> <!-- Sign In --> <a href="/auth/login" class="hidden lg:flex justify-center items-center h-full w-full px-2 text-slate-200 bg-indigo-700 hover:font-bold hover:bg-indigo-900">Sign In</a> </div> <!-- === end of DESKTOP === --> <!-- === MOBILE === --> <button type="button" class="block lg:hidden text-white text-2xl" onclick="openMenu()"> <svg fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="1em" width="1em" style="overflow: visible; color: currentcolor;"><path d="M3 12 21 12"></path><path d="M3 6 21 6"></path><path d="M3 18 21 18"></path></svg> </button> <!-- === NAVIGATION === --> <div id="mobile-menu" class="hidden h-full w-full top-0 left-0"> <!-- Masking --> <div class="w-full h-full bg-black opacity-30"></div> <!-- Menu --> <div class="absolute lg:hidden flex flex-col justify-between pt-5 pb-10 top-0 bg-gray-800 right-0 h-full w-[70%]"> <div class="flex flex-col gap-2"> <!-- Close Button --> <button type="button" class="px-2 w-fit text-3xl text-red-700" onclick="closeMenu()"><svg fill="currentColor" stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="1em" width="1em" style="overflow: visible; color: currentcolor;"><path d="m563.8 512 262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path></svg></button> <!-- List Menu --> <nav class="flex flex-col h-fit text-lg justify-around w-full text-slate-200 gap-2"> <a href="/" class="flex items-center justify-start xl:justify-center px-4 py-1 w-full h-full hover:font-bold hover:bg-blue-900">Home</a> <a href="/about" class="flex items-center justify-start xl:justify-center px-4 py-1 w-full h-full hover:font-bold hover:bg-blue-900">About</a> <a href="/articles" class="flex items-center justify-start xl:justify-center px-4 py-1 w-full h-full hover:font-bold hover:bg-blue-900">Articles</a> <a href="/categories" class="flex items-center justify-start xl:justify-center px-4 py-1 w-full h-full hover:font-bold hover:bg-blue-900">Categories</a> <a href="/auth/login" class="flex items-center justify-start xl:justify-center px-4 py-1 w-full h-full hover:font-bold hover:bg-indigo-800">Sign In</a> </nav> </div> <div class="flex flex-col justify-center items-center text-slate-200"> <span>&copy; Copyright, Aldi Ramdani</span><span>All Rights Reserved</span> </div> </div> </div> <!-- === end of MOBILE === --> </div> <!-- === end of NAVBAR ===  --> <!-- === SEARCH === --> <script>
+  function E_Search_Focus() {
+    const element = document.getElementById("search-form");
+    if (element.classList.contains("ring-1")) {
+      element.classList.remove("ring-1", "ring-blue-500");
+    } else {
+      element.classList.add("ring-1", "ring-blue-500");
+    }
+  }
+</script> <div class="flex flex-row justify-center bg-gray-200 dark:bg-gray-400 py-1 w-full"> <form id="search-form" class="flex flex-row my-1 border border-slate-200 rounded-l-sm rounded-r-sm"> <input type="text" name="search" class="bg-white px-4 py-1 rounded-l-sm outline-none" placeholder="Search for articles" onfocus="E_Search_Focus()" onblur="E_Search_Focus()"> <button type="submit" class="px-4 py-1 bg-blue-500 text-white rounded-r-sm outline-none hover:font-medium hover:cursor-pointer hover:bg-blue-600">
+Search Article
+</button> </form> </div> </header> <!-- CAUTION --> <!-- <Caution client:only /> --> <!-- Content --> <main class="flex-1 px-10">  <h1>Articles</h1>  </main> <!-- Footer --> <footer> <h1>Footer</h1> </footer> </div>  </body></html>

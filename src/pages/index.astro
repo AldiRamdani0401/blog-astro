@@ -3,5 +3,77 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Home">
-  <h1>Home</h1>
+  <main class="flex flex-col justify-between gap-5">
+    <!-- === Popular Articles === -->
+    <div class="h-96 w-full rounded-sm">
+      <img
+        src="https://via.assets.so/game.png?id=1&q=95&w=1400&h=400&fit=fill"
+        class="object-cover w-full h-full rounded-sm"
+        alt="project-image"
+        draggable="false"
+      />
+    </div>
+    <!-- === end of Popular Articles === -->
+    <!-- === Container 1 === -->
+    <div class="flex flex-row gap-8">
+      <!-- === Articles === -->
+      <aside class="flex flex-col gap-2 w-6xl">
+        <!-- Label Container -->
+        <h1
+          class="text-3xl font-medium pb-2 border-b-3 border-slate-700 text-slate-800 select-none"
+        >
+          Articles
+        </h1>
+        <!-- Sub Container 1 : Categories -->
+        <div class="flex flex-row gap-2 border w-full py-1 select-none">
+          <button type="button" class="border px-2 rounded-sm"
+            >Category 1</button
+          >
+          <button type="button" class="border px-2 rounded-sm"
+            >Category 1</button
+          >
+          <button type="button" class="border px-2 rounded-sm"
+            >Category 1</button
+          >
+          <button type="button" class="border px-2 rounded-sm">More</button>
+        </div>
+        <!-- end of Sub Container 1 : Categories -->
+        <!-- Sub Container 2 : List Article -->
+        <div class="border py-2 grid grid-cols-4 gap-2 w-full">
+          <!-- Card 1 -->
+          <div class="border h-72 flex flex-col">
+						<!-- Cover Article -->
+            <img
+              src="https://via.assets.so/game.png?id=1&q=95&w=1400&h=400&fit=fill"
+              alt=""
+							class="h-full"
+            />
+            <!-- Article Description -->
+						 <div class="px-1">
+							<h1 class="text-lg">Title Article</h1>
+							<button class="border text-sm px-1">Category 1</button>
+							<button class="border text-sm px-1">Sub 1</button>
+							<button class="border text-sm px-1">Sub 2</button>
+						 </div>
+          </div>
+          <!-- end of Card 1 -->
+          <!-- Card 1 -->
+          <div class="border p-2 h-50 flex flex-col">
+            <img
+              src="https://via.assets.so/game.png?id=1&q=95&w=1400&h=400&fit=fill"
+              alt=""
+            />
+            <h1>Title Article</h1>
+          </div>
+          <!-- end of Card 1 -->
+        </div>
+        <!-- end of Sub Container 2 : List Article -->
+      </aside>
+      <!-- === end of Articles === -->
+
+      <!-- Article Recommendations -->
+      <aside class="w-[20%] border">aside 2</aside>
+    </div>
+    <!-- === end of Container 1 === -->
+  </main>
 </MainLayout>

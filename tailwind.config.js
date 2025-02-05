@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class", // Pastikan dark mode menggunakan class
   content: [
-    './src/**/*.{astro,html,js,jsx,ts,tsx,vue}',
+    "./src/**/*.{html,js,jsx,ts,tsx,astro}", // Pastikan semua file Astro terdeteksi
   ],
   theme: {
     extend: {},

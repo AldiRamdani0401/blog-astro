@@ -12,14 +12,16 @@ const { title = "Basic" } = Astro.props;
 ---
 
 <BaseLayout title={title}>
-  <div class="relative flex flex-col h-screen w-screen">
+  <div
+    class="relative flex flex-col h-screen w-screen overflow-x-hidden bg-[#FBFBFB] dark:bg-gray-900 border"
+  >
     <!-- Header -->
     <NavBar />
-    <!-- Content -->
-    <main class="flex-1 px-10">
+    <div class="flex-1 px-10 py-5 overflow-auto">
+      <!-- Content -->
       <slot />
-    </main>
-    <!-- Footer -->
-    <Footer />
+      <!-- Footer -->
+      <Footer />
+    </div>
   </div>
 </BaseLayout>

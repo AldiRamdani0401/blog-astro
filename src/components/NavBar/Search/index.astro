@@ -1,0 +1,33 @@
+<script is:inline>
+  function E_Search_Focus() {
+    const element = document.getElementById("search-form");
+    if (element.classList.contains("ring-1")) {
+      element.classList.remove("ring-1", "ring-blue-500");
+    } else {
+      element.classList.add("ring-1", "ring-blue-500");
+    }
+  }
+</script>
+
+<div class="flex flex-row h-10 justify-center bg-gray-100 shadow-md dark:bg-gray-400 w-full">
+  <form
+    id="search-form"
+    class="flex flex-row my-1 border border-slate-200 rounded-l-sm rounded-r-sm"
+  >
+    <input
+      type="text"
+      name="search"
+      class="bg-white px-4 py-1 rounded-l-sm outline-none"
+      placeholder="Search for articles"
+      onfocus="E_Search_Focus()"
+      onblur="E_Search_Focus()"
+    />
+
+    <button
+      type="submit"
+      class="flex items-center px-4 py-1 bg-blue-500 text-white rounded-r-sm outline-none hover:font-medium hover:cursor-pointer hover:bg-blue-600"
+    >
+      Search Article
+    </button>
+  </form>
+</div>
