@@ -1,12 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "astro.config.mjs",
-      "use": "@astrojs/vercel/build"
-    }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/" }
-  ]
+  "builds": [{ "src": "src/**/*", "use": "@astrojs/vercel" }],
+  "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
 }
