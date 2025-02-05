@@ -1,18 +1,22 @@
 ---
+// Layouts
 import MainLayout from "../layouts/MainLayout.astro";
+
+// Components
+// import SmallArticle from "../components/Articles/Card/SmallArticle.astro";
+import PopularArticle from "../components/Articles/Popular/index.astro";
+
+// REACT
+import ArticlesList from "../React/components/Articles/ListArticles.jsx";
+
+// Component Utils
+// import SkeletonArticle from "../components/utils/Loading/Skeleton/index.astro";
 ---
 
 <MainLayout title="Home">
   <main class="flex flex-col justify-between gap-5">
     <!-- === Popular Articles === -->
-    <div class="h-96 w-full rounded-sm overflow-hidden">
-      <img
-        src="https://via.assets.so/game.png?id=1&q=95&w=1400&h=400&fit=fill"
-        class="object-cover w-full h-full"
-        alt="project-image"
-        draggable="false"
-      />
-    </div>
+    <PopularArticle />
     <!-- === end of Popular Articles === -->
     <!-- === Container 1 === -->
     <div class="flex flex-row gap-8">
@@ -24,7 +28,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         >
           Articles
         </h1>
-        <!-- Sub Container 1 : Categories -->
+        <!-- === Sub Container 1 : Categories === -->
         <div class="flex flex-row gap-2 border w-full py-1 select-none">
           <button type="button" class="border px-2 rounded-sm"
             >Category 1</button
@@ -37,56 +41,10 @@ import MainLayout from "../layouts/MainLayout.astro";
           >
           <button type="button" class="border px-2 rounded-sm">More</button>
         </div>
-        <!-- end of Sub Container 1 : Categories -->
-        <!-- Sub Container 2 : List Article -->
-        <div class="border py-2 grid grid-cols-4 gap-2 w-full">
-          <!-- === Card 1 === -->
-          <div class="border h-72 flex flex-col rounded-md overflow-hidden">
-            <!-- Cover Article -->
-            <img
-              src="https://via.assets.so/game.png?id=1&q=95&w=1400&h=400&fit=fill"
-              alt=""
-              class="object-cover h-full"
-            />
-            <!-- Article Description -->
-            <div class="px-1">
-              <!-- Categories -->
-              <div class="flex flex-row py-1 gap-1">
-                <button class="border text-sm px-1">Category 1</button>
-                <button class="border text-sm px-1">Sub 1</button>
-                <button class="border text-sm px-1">Sub 2</button>
-              </div>
-              <!-- end of Categories -->
-              <!-- Title Article -->
-              <h1 class="text-xl font-medium h-fit overlow-hidden line-clamp-2">
-                Lorem ipsum, dolor sit amet consectetur adipisicing
-                elit.Laudantium nostrum, quidem veritatis rerum quibusdam
-                cupiditate velit commodi dolor aperiam adipisci officia
-                consectetur a similique, dolorum deleniti? Qu
-              </h1>
-              <!-- Highlight -->
-              <div class="h-fit overflow-hidden line-clamp-3 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Laudantium nostrum, quidem veritatis rerum quibusdam cupiditate
-                velit commodi dolor aperiam adipisci officia consectetur a
-                similique, dolorum deleniti? Quaerat aperiam eum possimus cumque
-                dolores repellendus quam eos tempore. Repellat sit sunt maiores
-                consequuntur, rem, pariatur nobis, fugiat laudantium aut
-                aspernatur quaerat earum!
-              </div>
-            </div>
-          </div>
-          <!-- end of Card 1 -->
-          <!-- Card 1 -->
-          <div class="border p-2 h-50 flex flex-col">
-            <img
-              src="https://via.assets.so/game.png?id=1&q=95&w=1400&h=400&fit=fill"
-              alt=""
-            />
-            <h1>Title Article</h1>
-          </div>
-          <!-- end of Card 1 -->
-        </div>
+        <!-- === end of Sub Container 1 : Categories === -->
+        <!-- === Sub Container 2 : List Article === -->
+        <!-- Render  REACT -->
+        <ArticlesList client:load />
         <!-- end of Sub Container 2 : List Article -->
       </aside>
       <!-- === end of Articles === -->
