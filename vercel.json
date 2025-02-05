@@ -1,5 +1,6 @@
 {
   "version": 2,
-  "builds": [{ "src": "src/**/*", "use": "@astrojs/vercel" }],
+  "public": "dist",
+  "builds": [{ "src": "package.json", "use": "@vercel/static" }],
   "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
 }
