@@ -8,9 +8,8 @@ dist/
 node_modules/
 
 # files
-*.json
-*.mjs
-
+package.json
+package-lock.json
 
 # logs
 npm-debug.log*
