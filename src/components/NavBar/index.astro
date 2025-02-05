@@ -1,5 +1,7 @@
 ---
 // import Caution from "../react/Caution.jsx";
+import { Image } from "astro:assets";
+import developmentGif from "../../assets/gif/development.gif";
 ---
 
 <script is:inline>
@@ -64,7 +66,11 @@
   <!-- === end of DESKTOP === -->
 
   <!-- === MOBILE === -->
-  <button type="button" class="block lg:hidden text-white text-2xl" onclick="openMenu()">
+  <button
+    type="button"
+    class="block lg:hidden text-white text-2xl"
+    onclick="openMenu()"
+  >
     <svg
       fill="none"
       stroke-width="2"
@@ -81,7 +87,7 @@
     >
   </button>
   <!-- === NAVIGATION === -->
-  <div id="mobile-menu" class="absolute h-full w-full top-0 left-0">
+  <div id="mobile-menu" class="hidden h-full w-full top-0 left-0">
     <!-- Masking -->
     <div class="w-full h-full bg-black opacity-30"></div>
     <!-- Menu -->
@@ -89,7 +95,10 @@
       class="absolute lg:hidden flex flex-col justify-between pt-5 pb-10 top-0 bg-gray-800 right-0 h-full w-[70%]"
     >
       <div class="flex flex-col gap-2">
-        <button type="button" class="px-2 w-fit text-3xl text-red-700 border" onclick="closeMenu()"
+        <button
+          type="button"
+          class="px-2 w-fit text-3xl text-red-700 border"
+          onclick="closeMenu()"
           ><svg
             fill="currentColor"
             stroke-width="0"
@@ -143,11 +152,7 @@
   id="caution"
   class="flex flex-row justify-center items-center gap-5 text-xl text-center py-2 px-2 bg-yellow-400 select-none"
 >
-  <img
-    src="/src/assets/gif/development.gif"
-    class="h-10 rounded-full"
-    alt="Development"
-  />
+  <Image src={developmentGif} class="h-10 w-10 rounded-full" alt="Development" />
   <h1 class="font-bold text-sm">This website is still under development</h1>
   <button
     class="text-red-500 font-bold text-3xl cursor-pointer"

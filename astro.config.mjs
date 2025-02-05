@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 
 import tailwindcss from "@tailwindcss/vite";
 
-import vercelServerless from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 
 export default defineConfig({
   integrations: [react()],
@@ -11,6 +11,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  output: 'server',
-  adapter: vercelServerless(),
+  // SSG
+  output: "static",
+  adapter: vercel(),
 });
