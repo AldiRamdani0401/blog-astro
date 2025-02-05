@@ -5,10 +5,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout title="Home">
   <main class="flex flex-col justify-between gap-5">
     <!-- === Popular Articles === -->
-    <div class="h-96 w-full rounded-sm">
+    <div class="h-96 w-full rounded-sm overflow-hidden">
       <img
         src="https://via.assets.so/game.png?id=1&q=95&w=1400&h=400&fit=fill"
-        class="object-cover w-full h-full rounded-sm"
+        class="object-cover w-full h-full"
         alt="project-image"
         draggable="false"
       />
@@ -40,21 +40,41 @@ import MainLayout from "../layouts/MainLayout.astro";
         <!-- end of Sub Container 1 : Categories -->
         <!-- Sub Container 2 : List Article -->
         <div class="border py-2 grid grid-cols-4 gap-2 w-full">
-          <!-- Card 1 -->
-          <div class="border h-72 flex flex-col">
-						<!-- Cover Article -->
+          <!-- === Card 1 === -->
+          <div class="border h-72 flex flex-col rounded-md overflow-hidden">
+            <!-- Cover Article -->
             <img
               src="https://via.assets.so/game.png?id=1&q=95&w=1400&h=400&fit=fill"
               alt=""
-							class="h-full"
+              class="object-cover h-full"
             />
             <!-- Article Description -->
-						 <div class="px-1">
-							<h1 class="text-lg">Title Article</h1>
-							<button class="border text-sm px-1">Category 1</button>
-							<button class="border text-sm px-1">Sub 1</button>
-							<button class="border text-sm px-1">Sub 2</button>
-						 </div>
+            <div class="px-1">
+              <!-- Categories -->
+              <div class="flex flex-row py-1 gap-1">
+                <button class="border text-sm px-1">Category 1</button>
+                <button class="border text-sm px-1">Sub 1</button>
+                <button class="border text-sm px-1">Sub 2</button>
+              </div>
+              <!-- end of Categories -->
+              <!-- Title Article -->
+              <h1 class="text-xl font-medium h-fit overlow-hidden line-clamp-2">
+                Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit.Laudantium nostrum, quidem veritatis rerum quibusdam
+                cupiditate velit commodi dolor aperiam adipisci officia
+                consectetur a similique, dolorum deleniti? Qu
+              </h1>
+              <!-- Highlight -->
+              <div class="h-fit overflow-hidden line-clamp-3 text-sm">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Laudantium nostrum, quidem veritatis rerum quibusdam cupiditate
+                velit commodi dolor aperiam adipisci officia consectetur a
+                similique, dolorum deleniti? Quaerat aperiam eum possimus cumque
+                dolores repellendus quam eos tempore. Repellat sit sunt maiores
+                consequuntur, rem, pariatur nobis, fugiat laudantium aut
+                aspernatur quaerat earum!
+              </div>
+            </div>
           </div>
           <!-- end of Card 1 -->
           <!-- Card 1 -->
@@ -72,7 +92,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       <!-- === end of Articles === -->
 
       <!-- Article Recommendations -->
-      <aside class="w-[20%] border">aside 2</aside>
+      <aside class="w-[20%] border">Recommendation</aside>
     </div>
     <!-- === end of Container 1 === -->
   </main>
