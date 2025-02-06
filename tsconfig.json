@@ -8,7 +8,23 @@
     "dist"
   ],
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  }
+    "strict": true,
+    "allowJs": true
+  },
+  "overrides": [
+    {
+      "files": ["src/React/**/*"],
+      "compilerOptions": {
+        "jsx": "react-jsx",
+        "jsxImportSource": "react"
+      }
+    },
+    {
+      "files": ["src/Solid/**/*"],
+      "compilerOptions": {
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js"
+      }
+    }
+  ]
 }

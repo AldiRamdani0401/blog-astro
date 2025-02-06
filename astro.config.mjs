@@ -5,9 +5,16 @@ import tailwindcss from "@tailwindcss/vite";
 
 import vercel from "@astrojs/vercel";
 
+import solidJs from "@astrojs/solid-js";
+
 export default defineConfig({
   integrations: [
-    react(),
+    react({
+      include: ["**/React/*"],
+    }),
+    solidJs({
+      include: ["**/Solid/*"],
+    }),
   ],
 
   vite: {

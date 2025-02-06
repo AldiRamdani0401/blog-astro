@@ -1,16 +1,22 @@
 ---
-// Layouts
+// Layouts : ASTRO
 import MainLayout from "../layouts/MainLayout.astro";
 
-// Components
+// Utils : ASTRO
+import { Image } from "astro:assets";
+
+// Assets
+import owner from "../assets/owner/aldi.jpeg";
+
+// Components : ASTRO
 // import SmallArticle from "../components/Articles/Card/SmallArticle.astro";
 import PopularArticle from "../components/Articles/Popular/index.astro";
 
-// REACT
+// === REACT ===
 import ArticlesList from "../React/components/Articles/ListArticles.jsx";
 
-// Component Utils
-// import SkeletonArticle from "../components/utils/Loading/Skeleton/index.astro";
+// === SOLID ===
+import CategoriesList from "../React/components/ListCategories.jsx";
 ---
 
 <MainLayout title="Home">
@@ -29,28 +35,33 @@ import ArticlesList from "../React/components/Articles/ListArticles.jsx";
           Articles
         </h1>
         <!-- === Sub Container 1 : Categories === -->
-        <div class="flex flex-row gap-2 border w-full py-1 select-none">
-          <button type="button" class="border px-2 rounded-sm"
-            >Category 1</button
-          >
-          <button type="button" class="border px-2 rounded-sm"
-            >Category 1</button
-          >
-          <button type="button" class="border px-2 rounded-sm"
-            >Category 1</button
-          >
-          <button type="button" class="border px-2 rounded-sm">More</button>
-        </div>
+        <CategoriesList client:only="react" />
         <!-- === end of Sub Container 1 : Categories === -->
         <!-- === Sub Container 2 : List Article === -->
-        <!-- Render  REACT -->
-        <ArticlesList client:load />
+        <ArticlesList client:only="react" />
         <!-- end of Sub Container 2 : List Article -->
       </aside>
       <!-- === end of Articles === -->
 
       <!-- Article Recommendations -->
-      <aside class="w-[20%] border">Recommendation</aside>
+      <aside class="w-[20%] flex flex-col gap-2">
+        <!-- Owner -->
+        <div
+          class="border border-slate-200 h-fit w-full flex flex-col items-center p-2 bg-white rounded-lg shadow-lg select-none"
+        >
+          <h1 class="text-xl text-gray-900 font-semibold mb-1">Owner</h1>
+          <Image
+            src={owner}
+            class="object-cover h-36 w-full rounded-md mb-2"
+            alt="Owner"
+          />
+          <p class="flex flex-col text-center text-xs text-gray-800">
+            <span class="font-medium">Aldi Ramdani</span><span
+              >The mastermind behind this amazing website.</span>
+          </p>
+        </div>
+        <h1>Recommendation</h1>
+      </aside>
     </div>
     <!-- === end of Container 1 === -->
   </main>
