@@ -35,10 +35,10 @@ import CategoriesList from "../React/components/ListCategories.jsx";
           Articles
         </h1>
         <!-- === Sub Container 1 : Categories === -->
-        <CategoriesList client:only="react" />
+        <CategoriesList client:load />
         <!-- === end of Sub Container 1 : Categories === -->
         <!-- === Sub Container 2 : List Article === -->
-        <ArticlesList client:only="react" />
+        <ArticlesList client:idle={{timeout: 800}} />
         <!-- end of Sub Container 2 : List Article -->
       </aside>
       <!-- === end of Articles === -->
